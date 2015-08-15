@@ -7,4 +7,5 @@ service mysqld start
 service php56-php-fpm start
 service varnish start
 service nginx start
+chown -R nginx:nginx /var/www
 /bin/bash
