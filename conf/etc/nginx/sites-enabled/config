@@ -1,4 +1,0 @@
-upstream php_workers {
-    server unix:/var/run/php-fpm.sock;
-    #server 127.0.0.1:9000;
-}
