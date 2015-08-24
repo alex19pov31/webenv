@@ -9,13 +9,10 @@ RUN	rpm -Uvh http://nginx.org/packages/centos/6/noarch/RPMS/nginx-release-centos
 	rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-6.rpm && \ 
 	yum update -y && \ 
 	yum --enablerepo=remi install git mc mysql-server mysql-client varnish -y && \ 
-	yum --enablerepo=remi install php56 php56-php-cli php56-php-fpm php56-php-opcache php56-php-apcu php56-php-phalcon2 php56-php-mysqlnd php56-php-mbstring php56-php-gd php56-php-mcrypt -y && \ 
+	yum --enablerepo=remi install php54 php54-php-cli php54-php-fpm php54-php-opcache php54-php-apcu php56-php-mysqlnd php56-php-mbstring php56-php-gd php56-php-mcrypt -y && \ 
 	cd /root && \ 
-	git clone https://github.com/phalcon/phalcon-devtools.git && \ 
-	ln -s /root/phalcon-devtools/phalcon.php /usr/bin/phalcon && \ 
-	chmod ugo+x /usr/bin/phalcon && \ 
 	curl -sS https://getcomposer.org/installer | php56 -- --install-dir=/usr/local/bin --filename=composer && \
-	ln -s /opt/remi/php56/root/usr/bin/php /usr/bin/php && \
+	ln -s /opt/remi/php54/root/usr/bin/php /usr/bin/php && \
 	mkdir /tmp/php && chown -R nginx:nginx /tmp/php && \
 	chown -R nginx:nginx /opt/remi/php56/root/var/lib/php/session && \
 	chown -R nginx:nginx /opt/remi/php56/root/var/lib/php/wsdlcache
